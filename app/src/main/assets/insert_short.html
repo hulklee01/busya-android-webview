@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>.....</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- <script src="https://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script> -->        
+    <script src="js/mobiscroll.javascript.min.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/callkakaoid.js"></script>
+    <script src="js/register.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="main">
+        <div data-role="header" data-theme="a">
+
+        </div>
+        <div data-role="content" class="ui-content" style="background: white;">
+            <div class="ui-field-contain">
+                <form method="POST">
+                    <label for="name">단체명</label>
+                    <input type="text" name="name" id="name" placeholder="이름을 입력해주세요." value="">
+                    <br>
+                    <label for="car">차량</label>
+                    <select name="car" id="car" data-mini="true">
+                        <option value="">선택해주세요</option>
+                        <option value="9">9인승</option>
+                        <option value="12">12인승</option>
+                        <option value="25">25인승</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="dest">목적지</label>
+                    <input type="text" name="dest" id="dest" placeholder="목적지를 입력해주세요." value="">
+                    <br>
+                    <label for="date">일시</label>
+                    <input type="text" id="date" name="date" placeholder="날짜를 입력해주세요.">
+                    <br>
+                    <label for="time">시간</label>
+                    <input id="time" name="time" placeholder="시간을 입력해주세요.">
+                    <br>
+                    <label for="price">보수</label>
+                    <input type="number" id="price" pattern="[0-9]*" name="price" placeholder="보수를 입력해주세요. (원 단위)">
+                    <br>
+                    <br>
+                    <a href="redirection.html" type="submit" id="submit-short" class="ui-shadow ui-btn ui-corner-all ui-mini ui-btn-b">입력완료</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var now = new Date();
+
+    mobiscroll.settings = {
+        theme: 'material'
+    };
+
+    mobiscroll.time('#time', {
+        theme: 'material',
+        display: 'center',
+    });
+</script>

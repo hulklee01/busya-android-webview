@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>.....</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/callkakaoid.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="main">
+        <div data-role="header" data-theme="a" style="background-color: blue">
+            <h1>버스야</h1>
+        </div>
+        <div data-role="content" class="ui-content" style="background: white;">
+            <script lang="js">
+                for(i = 0; i < 10; i++) {
+                    document.write('<a href="#boardpage" data-transition="slideup" data-role="button" style="height: 100px; font: 15px Calibri, Arial;">버스' + i + '</a>');
+                }    
+            </script>
+        </div>
+    </div>
+</body>

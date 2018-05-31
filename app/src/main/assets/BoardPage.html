@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script language="javascript">
+        var obj = new Object();
+        obj.num = 4350;
+        var jsonData = JSON.stringify(obj);
+        var num = 4350;    
+
+        $.ajax({
+            contentType: "application/json",
+            type: "POST",
+            dataType: "json",
+            url: "https://busyawrite.azurewebsites.net/api/select",
+            data: jsonData,
+            success: function(data) {
+                alert(data['num'] + ":" + data['name']);
+                $.each(data, function (index, item) {
+                    
+                })
+            }
+        });    
+    </script>
+</head>
+<body>
+    <div data-role="page" id="main">
+        <div data-role="header" data-theme="a">
+            <script language="javascript">
+                         
+            </script>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-nodisc-icon ui-alt-icon ui-icon-bars ui-btn-icon-notext ui-btn-inline"></a>
+        </div>
+        <div data-role="content">
+            
+        </div>
+    </div>
+</body>

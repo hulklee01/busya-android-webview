@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <title>Login Demo - Kakao JavaScript SDK</title>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <title>Title</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="connect.js"></script>
+    <style type='text/css'>
+        .ui-header {
+            background: white;
+            height: 40px;
+        }
+
+        .ui-btn {
+            background: skyblue;
+            height: 30%;
+        }
+
+        .ui-icon-bars {
+            background: white;
+            background-size: 28px;
+            width: 28px;
+            height: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="main">
+        <div data-role="header" data-theme="a">
+            <h1> 버스야 </h1>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-nodisc-icon ui-alt-icon ui-icon-bars ui-btn-icon-notext ui-btn-inline"></a>
+        </div>
+
+        <div data-role="content" class="ui-content" style="background: white;">        
+            <script lang="javascript">
+                document.write('<a href="#busboard" id="getBusBoard" data-role="button" style="height: 150px; font: 14px Calibri,Arial;"><br/><br/><br/>' + getParameters('kakaoid') + '</a>');
+            </script>
+            
+            <a href="#workboard" data-role="button" style="height: 150px; font: 14px Calibri,Arial;">
+                <br/>
+                <br/>
+                <br/>일자리가 필요해요!!</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="busboard">
+        <div data-role="header" data-theme="a">
+            <h1> </h1>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-nodisc-icon ui-alt-icon ui-icon-bars ui-btn-icon-notext ui-btn-inline"></a>
+        </div>
+        <div data-role="content" class="ui-content">
+            <script lang="javascript">   
+                
+                for (i = 1; i <= 10; i++) {
+                    document.write('<a href="#boardpage" data-transition="slideup" data-role="button" style="height: 100px; font: 15px Calibri, Arial;">버스' + i + '</a>');
+                }
+            </script>
+        </div>
+    </div>
+
+    <div data-role="page" id="workboard">
+        <div data-role="header" data-theme="a">
+            <h1> </h1>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-nodisc-icon ui-alt-icon ui-icon-bars ui-btn-icon-notext ui-btn-inline"></a>
+        </div>
+        <div data-role="content" class="ui-content">
+            <script lang="javascript">
+                for (i = 1; i <= 10; i++) {
+                    document.write('<a href="#boardpage" data-transition="pop" data-role="button" style="height: 100px; font: 15px Calibri, Arial;">유치원' + i + '</a>');
+                }
+            </script>
+        </div>
+    </div>
+
+    <div data-role="page" id="boardpage" data-dialog="true">
+        <!-- <div data-role="header" data-theme="a">
+            <script language="javascript">
+
+            </script>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-nodisc-icon ui-alt-icon ui-icon-bars ui-btn-icon-notext ui-btn-inline"></a>
+        </div> -->
+        <div data-role="content">
+            <div class="ui-corner-all custom-corners">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Heading</h3>
+                </div>
+                <div class="ui-body ui-body-a">
+                    <p>Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

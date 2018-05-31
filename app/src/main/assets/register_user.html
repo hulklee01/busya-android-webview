@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/callkakaoid.js"></script>
+    <script src="js/register.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="main">
+        <div data-role="header" data-theme="a">
+            <h1> 회원가입 </h1>
+        </div>
+        <div data-role="content" class="ui-content" style="background: white;">
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#user" data-role="button" style="height: 150px; font: 14px Calibri,Arial;">
+                        <br>
+                        <br>
+                        <br>선생님</a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#driver" data-role="button" style="height: 150px; font: 14px Calibri,Arial;">
+                        <br>
+                        <br>
+                        <br>운전 기사</a>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div data-role="page" id="user">
+        <div data-role="header" data-theme="a">
+            <h1> 사용자정보입력</h1>
+        </div>
+        <div data-role="content" class="ui-content" style="background: white;">
+            <div class="ui-field-contain">
+                <form method="POST">
+                    <label for="username">단체명</label>
+                    <input type="text" name="username" id="username" placeholder="이름을 입력해주세요." value="">
+                    <br>
+                    <label for="usertel">전화번호</label>
+                    <input type="number" name="usertel" id="usertel" pattern="[0-9]*" placeholder="전화번호를 입력해주세요. ('-' 제외)" value="">
+                    <br>
+                    <label for="userregion">지역</label>
+                    <select name="userregion" id="userregion" data-mini="true">
+                        <option value="">선택해주세요</option>
+                        <option value="1동탄">1동탄</option>
+                        <option value="2동탄">2동탄</option>
+                        <option value="안양">안양</option>
+                        <option value="수원">수원</option>
+                    </select>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="./redirection.html" type="submit" id="submit-user" class="ui-shadow ui-btn ui-corner-all ui-mini ui-btn-b">입력완료</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" id="driver">
+        <div data-role="header" data-theme="a">
+            <h1> 기사정보입력</h1>
+        </div>
+        <div data-role="content" class="ui-content" style="background: white;">
+            <div class="ui-field-contain">
+                <form method="POST">
+                    <label for="name">이름</label>
+                    <input type="text" name="name" id="name" placeholder="이름을 입력해주세요." value="">
+                    <br>
+                    <label for="tel">전화번호</label>
+                    <input type="number" name="tel" id="tel" pattern="[0-9]*" placeholder="전화번호를 입력해주세요. ('-' 제외)" value="">
+                    <br>
+                    <label for="car">차량</label>
+                    <select name="car" id="car" data-mini="true">
+                        <option value="">선택해주세요</option>
+                        <option value="9">9인승</option>
+                        <option value="12">12인승</option>
+                        <option value="25">25인승</option>
+                    </select>
+                    <br>
+                    <label for="region">지역</label>
+                    <select name="region" id="region" data-mini="true">
+                        <option value="">선택해주세요</option>
+                        <option value="1동탄">1동탄</option>
+                        <option value="2동탄">2동탄</option>
+                        <option value="안양">안양</option>
+                        <option value="수원">수원</option>
+                    </select>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="./redirection.html" type="submit" id="submit-driver" class="ui-shadow ui-btn ui-corner-all ui-mini ui-btn-b">입력완료</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
