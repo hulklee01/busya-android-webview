@@ -30,7 +30,8 @@ public class RegistActivity extends AppCompatActivity {
         mWebView = (WebView) findViewById(R.id.activity_main_webview);
 
         mWebSettings = mWebView.getSettings();
-        mWebSettings.setJavaScriptEnabled(true);
+
+//        mWebSettings.setDomStorageEnabled(true);
 
         mWebView.setWebChromeClient(new WebChromeClient(){
             @Override
@@ -38,6 +39,7 @@ public class RegistActivity extends AppCompatActivity {
                 return super.onJsAlert(view, url, message, result);
             }
         });
+
 
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
@@ -50,9 +52,15 @@ public class RegistActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 Log.d("check", "onpagefinished" + url);
+
                 mWebView.loadUrl("javascript:setMessage('" + kakaoid +"')");
             }
         });
+
+        mWebSettings.setJavaScriptEnabled(true);
+        mWebView.clearCache(true);
+        mWebSettings.setDomStorageEnabled(true);
+
         mWebView.loadUrl("https://busya.azurewebsites.net/redirection.html");
 //        mWebView.loadUrl("http://busya.azurewebsites.net/redirection.html");
     }
