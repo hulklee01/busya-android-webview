@@ -25,8 +25,8 @@
             android:value="@string/kakao_app_key" />
         <activity
             android:name=".RegistActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
-
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".DriverActivity"

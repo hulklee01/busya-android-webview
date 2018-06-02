@@ -27,6 +27,21 @@ public class MainActivity extends AppCompatActivity {
 
     private SessionCallback callback;
 
+    private void getHashKey(){
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.mobile.hulklee01.busya", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("HASHKEY","key_hash="+Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.FROYO)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         public void onSessionOpenFailed(KakaoException exception) {
             // 세션 연결이 실패했을때
             Log.d("FAIL", "Login Session FAIL");
+            getHashKey();
             // 어쩔때 실패되는지는 테스트를 안해보았음 ㅜㅜ
         }
     }

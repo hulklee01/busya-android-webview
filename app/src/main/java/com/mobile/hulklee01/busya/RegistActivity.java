@@ -53,8 +53,8 @@ public class RegistActivity extends AppCompatActivity {
                 mWebView.loadUrl("javascript:setMessage('" + kakaoid +"')");
             }
         });
-//        mWebView.loadUrl("https://busya.azurewebsites.net/redirection.html");
-        mWebView.loadUrl("http://218.150.182.28:3000/redirection.html");
+        mWebView.loadUrl("https://busya.azurewebsites.net/redirection.html");
+//        mWebView.loadUrl("http://busya.azurewebsites.net/redirection.html");
     }
 
     @Override
